@@ -6,6 +6,7 @@ import argparse
 import sys
 import os
 import stat
+import time
 
 class FileTransferClient:
 
@@ -29,8 +30,8 @@ class FileTransferClient:
 		print('Sending ' + src + ' to ' + dst)
 		self.sftp.put(src,dst)
 
-
 	def close(self): 
+		print('Closing client...')
 		self.sftp.close()
 		self.ssh.close()
 
@@ -54,6 +55,7 @@ def main():
 
 	client = None
 
+	
 	if args.send:
 		for filename in listdir(args.inputDir):
 			if os.path.isfile(args.inputDir + filename):
