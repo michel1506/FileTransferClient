@@ -47,9 +47,9 @@ def main():
 	parser.add_argument('port', type=int, help='Port of SSH server')
 	parser.add_argument('user', type=str, help='Username of SSH user')
 	parser.add_argument('password', type=str, help='Password of SSH user')
-	parser.add_argument('inputDir', type=str, help='Directory to transfer')
+	parser.add_argument('inputDir', type=str, help='Directory that will be transferred')
 	parser.add_argument('outputDir', type=str, help='Output directory')
-	parser.add_argument('--keepAfterTransfer', action='store_true', help='Keep files after transfer')
+	parser.add_argument('--keepAfterTransfer', action='store_true', help='Keep files on senders device after transfer')
 	args = parser.parse_args()
 
 	client = None
