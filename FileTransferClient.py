@@ -41,8 +41,8 @@ class FileTransferClient:
 def main():
 	parser = argparse.ArgumentParser()
 	group = parser.add_mutually_exclusive_group()
-	group.add_argument('-s', '--send', action='store_true')
-	group.add_argument('-g', '--get', action='store_true')
+	group.add_argument('-s', '--send', action='store_true', help='Send files to SSH server')
+	group.add_argument('-g', '--get', action='store_true', help='Get files from SSH server')
 	parser.add_argument('host', type=str, help='Hostname of SSH server')
 	parser.add_argument('port', type=int, help='Port of SSH server')
 	parser.add_argument('user', type=str, help='Username of SSH user')
